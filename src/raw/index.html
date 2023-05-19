@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <body class="vip-store">
+    <header>
+      <div class="container">
+        <a class="btn-link hidden-lg-up" href="/"><i class="icon icon-home"></i></a>
+        <a class="site-logo" href="/">
+          <img class="logo" src="" alt="LOGO" />
+        </a>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div id="js-banner-area" class="banner-area">
+        <a id="banner" data-bind="banner" class="vip-bannerbox"></a>
+      </div>
+      <!-- products -->
+      <div id="container" class="container">
+        <div id="product-group" class="row product-group flex"></div>
+      </div>
+      <a class="btn-gotop"><i class="icon icon-arrow-up"></i><span>TOP</span></a>
+      <div class="modal product-modal" id="productModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="title"></h4>
+              <a class="btn btn-close" href="" data-dismiss="modal" aria-label="Close"
+                ><span class="text">關閉視窗</span> <i class="icon icon-close"></i
+              ></a>
+            </div>
+            <div class="modal-body js-tab-in-modal">
+              <div class="row">
+                <div class="detail-images">
+                  <div class="slider-product-view-box">
+                    <ul id="gallery-slider-view" class="gallery-slider-view"></ul>
+                  </div>
+                  <div class="slider view-thumbnail">
+                    <div id="slider-product-pager" class="slider-view"></div>
+                  </div>
+                </div>
+                <div class="detail-intro">
+                  <div id="production-into"></div>
+                  <hr class="divider horizontal" />
+                  <ul id="production-gift" class="product-event"></ul>
+                  <p class="product-extra">* 特惠商品不列入折扣項目</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="nav-tabs nav-tabs-product">
+                  <ul class="nav-tabs-list align center" role="tablist">
+                    <li class="nav-tabs-item active">
+                      <a class="nav-link" href="javascript:;" role="tab">商品介紹</a>
+                    </li>
+                    <li class="nav-tabs-item">
+                      <a class="nav-link" href="javascript:;" role="tab">規格</a>
+                    </li>
+                    <li class="nav-tabs-item">
+                      <a class="nav-link" href="javascript:;" role="tab">配送與退貨說明</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div class="tab-pane" id="intro"></div>
+                  <div class="tab-pane" id="spec"></div>
+                  <div class="tab-pane" id="notice">
+                    <dl id="notice-dl"></dl>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-group">
+                <a class="btn btn-query-outline" href="" data-dismiss="modal" aria-label="Close"
+                  >關閉視窗</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <p class="copyright">XX企業股份有限公司</p>
+        <div class="app-downloads">
+          <span class="text-muted"
+            >APP下載<br />
+            <a class="underline inverted" href=""> 詳細說明 </a>
+          </span>
+          <img class="qrcode" alt="AppStore" src="/feature/images/app-download-qrcode.svg" />
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================================== Script ===================================== -->
+    <!-- { Template - Product Group HTML 下方產品s } -->
+    <script type="text/html" id="template-product-group">
+      <div class="product product-view" data-pid="{{itemNo}}">
+        <a
+          class="quickview"
+          href="javascript:;"
+          data-toggle="modal"
+          data-target="#productModal-10000000001"
+        >
+          <img class="thumbnail" alt="商品圖" src="{{imageUrl}}" />
+        </a>
+        <div class="content">
+          <h1 class="title">
+            <a
+              class="quickview"
+              href="javascript:;"
+              data-toggle="modal"
+              data-target="#productModal-10000000001"
+              >{{title}}</a
+            >
+          </h1>
+          <div class="type">
+            <span class="label">{{specName}}</span>
+            <span class="name">{{specValue}}</span>
+          </div>
+          <div class="price ch">
+            <del class="fn-sm">{{originalPrice}}</del>
+            <b class="fn-md">{{discountPrice}}</b>
+          </div>
+          <div class="action-block" data-brand="{{brand}}" data-discount-id="{{discountId}}">
+            <div class="{{numberGroupClass}}">
+              <button class="number-less"><i class="icon icon-minus"></i></button>
+              <input
+                class="number-view"
+                type="number"
+                value="{{showAmount}}"
+                max="{{amountLimit}}"
+                min="1"
+              />
+              <button class="number-plus"><i class="icon icon-plus"></i></button>
+            </div>
+            <a
+              class="js-btn {{buttonClass}}"
+              href="{{buttonHref}}"
+              data-selected="{{isSelected}}"
+              data-selected-amount="{{selectedAmount}}"
+              data-price="{{dataPrice}}"
+              data-item-no="{{itemNo}}"
+              >{{buttonText}}</a
+            >
+          </div>
+        </div>
+      </div>
+    </script>
+  </body>
+</html>
