@@ -1,4 +1,5 @@
-import './assets/vip.css'
+import './assets/vip.css';
+import './assets/vip-custom.css';
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

@@ -1,0 +1,57 @@
+/* 修正 mobile 活動尚未開始按鈕跑版的問題 by Haru */
+@media (max-width: 991px) {
+  .vip-store .add-Check-bar a {
+    display: block;
+  }
+}
+
+/* 修正 modal 彈跳的問題 by Qmo */
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.modal-backdrop.show {
+  opacity: 0.6;
+}
+
+/* 取消按鈕 focus 狀態變化(原本指定 opacity: 0.8) by Qmo and Haru */
+a:focus {
+  opacity: 1;
+}
+
+/** 修正未選購時，失去背景顏色的問題 by Haru */
+@media (min-width: 992px) {
+  .vip-bannerbox-product {
+    border-color: #1b1c1d;
+    background-color: #1b1c1d;
+    -webkit-box-shadow: inset 0 0 0 2px #1b1c1d;
+    box-shadow: inset 0 0 0 2px #1b1c1d;
+  }
+}
+
+.error + .error-msg {
+  display: block;
+}
+
+/** 修正縮小後，主商品選購時失去背景顏色的問題 by Haru */
+@media (max-width: 992px) {
+  .vip-bannerbox-product.active {
+    background-color: #fff0d9;
+  }
+}
+
+/** 新增 preview 版本，購物車結帳 disable hover 跟 active 狀態變化 by Haru */
+.btn.btn-primary.btn-disabled:active,
+.btn.btn-primary.btn-disabled:hover,
+.btn.btn-primary.btn-disabled:focus {
+  background-color: #b5b7b9;
+}
+
+/** 修正商品圖上傳格式非正方形時跑版的問題 by Haru & Qmo */
+.product-group .quickview {
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
+}
