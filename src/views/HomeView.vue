@@ -1,9 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref } from 'vue'
+import Products from '../components/ProductList.vue'
+import Header from '../components/BaseHeader.vue'
+import Footer from '../components/BaseFooter.vue'
+import rawProducts from '../raw/products.js'
+
+const products = ref(rawProducts)
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <Header />
+  <Products :products="products" />
+  <Footer />
 </template>
